@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: age-calci
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: age-calci
+  template:
+    metadata:
+      labels:
+        app: age-calci
+    spec:
+      containers:
+      - name: age-calci
+        image: amoljorewar/webapp-project:30
+        ports:
+        - containerPort: 80
