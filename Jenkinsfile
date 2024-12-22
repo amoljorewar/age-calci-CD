@@ -6,8 +6,11 @@ pipeline {
                         bat 'dir'
                         //bat 'copy C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\webappCD\\helm\\*.* C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\webappCD'
 			//bat 'dir'
-		    	//bat 'cd helm'
-                        bat 'helm upgrade --install age-calci age-calci  --set image.repository=registry.hub.docker.com/amoljorewar/age-calculator --set image.tag=latest'
+		    	bat 'cd helm\\age-calci\\templates'
+		    	bat 'dir'
+                        bat 'kubectl apply -f age_calci.yaml'
+		    	bat 'kubectl apply -f age_calci_svc.yaml'
+		    	bat 'kubectl get all -o wide'
               			
             }           
         }
