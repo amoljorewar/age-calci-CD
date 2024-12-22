@@ -5,9 +5,12 @@ pipeline {
             steps {           
                         bat 'dir'
 		    	bat 'mkdir age-calci'
+		    	bat 'cd age-calci'
+		    	bat 'mkdir templates'
                         bat 'copy helm\\age-calci\\*  age-calci\\'
+		    	bat 'copy helm\\age-calci\\templates\\* age-calci\\templates\\'
 		        bat 'dir'
-                        bat 'C:\\"Program Files"\\helm-v3.16.4-windows-amd64\\windows-amd64\\helm upgrade --install age-calci age-calci  --set image.repository=registry.hub.docker.com/amoljorewar/age-calculator --set image.tag=latest'
+                        bat 'helm upgrade --install age-calci age-calci  --set image.repository=registry.hub.docker.com/amoljorewar/age-calculator --set image.tag=latest'
               			
             }           
         }
