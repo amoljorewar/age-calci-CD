@@ -8,7 +8,9 @@ pipeline {
 			//bat 'dir'
 		    	bat 'copy helm\\age-calci\\templates\\* C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\webappCD'
 		    	bat 'dir'
-                        bat 'kubectl apply -f age_calci.yaml'
+		    	bat 'kubectl delete -f age_calci_svc.yaml'
+		    	bat 'kubectl delete -f age_calci.yaml'
+		        bat 'kubectl apply -f age_calci.yaml'
 		    	bat 'kubectl apply -f age_calci_svc.yaml'
 		    	bat 'kubectl get all -o wide'
               			
