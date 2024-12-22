@@ -6,7 +6,7 @@ pipeline {
                         bat 'dir'
                         //bat 'copy C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\webappCD\\helm\\*.* C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\webappCD'
 			//bat 'dir'
-		    	bat 'cd helm\\age-calci\\templates'
+		    	bat 'copy helm\\age-calci\\templates\\* C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\webappCD'
 		    	bat 'dir'
                         bat 'kubectl apply -f age_calci.yaml'
 		    	bat 'kubectl apply -f age_calci_svc.yaml'
