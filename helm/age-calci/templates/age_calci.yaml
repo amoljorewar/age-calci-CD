@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: age-calci
-        image: amoljorewar/webapp-project:latest
+        image: amoljorewar/webapp-project:32
         ports:
         - containerPort: 80
