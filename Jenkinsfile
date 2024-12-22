@@ -10,7 +10,7 @@ pipeline {
 		    	bat 'copy helm\\age-calci\\templates\\* age-calci\\templates\\'
 		        bat 'dir'
                         bat 'helm upgrade --install age-calci age-calci  --set image.repository=registry.hub.docker.com/amoljorewar/age-calculator --set image.tag=32'
-              		bat 'rmdir	
+              		
             }           
         }
     }
